@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENJOY!</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: radial-gradient(circle, #1a2a6c, #b21f1f, #fdbb2d);
+            overflow: hidden;
+        }
+        .container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+        .circle {
+            width: 50px;
+            height: 50px;
+            background: cyan;
+            border-radius: 50%;
+            position: absolute;
+            animation: orbit 4s linear infinite;
+        }
+        @keyframes orbit {
+            0% {
+                transform: rotate(0deg) translateX(100px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(100px) rotate(-360deg);
+            }
+        }
+        .circle:nth-child(2) {
+            background: magenta;
+            animation-duration: 3s;
+        }
+        .circle:nth-child(3) {
+            background: yellow;
+            animation-duration: 5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+    </div>
+</body>
+</html>
