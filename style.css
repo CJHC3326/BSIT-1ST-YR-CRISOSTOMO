@@ -27,6 +27,13 @@
     float: left;
     padding-top: .6%;
     cursor: pointer;
+    transition: .4 ease;
+}
+
+.logo:hover{
+    background-color: transparent;
+    color: red;
+
 }
 
 .menu{
