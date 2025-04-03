@@ -54,9 +54,28 @@
     <div class="scene">
         <div class="ground"></div>
         <div class="glow"></div>
-        <marquee behavior="slide" direction="up"><img src="NAME.jpg" width="400px"></marquee>
         <div class="title">
             <h1>HELLO GUYS!!!</h1>
+            
+             <div class="image-container">
+                <img src="C.png" alt="Image 1">
+                <img src="A.png" alt="Image 2">
+                <img src="R.png" alt="Image 3">
+                <img src="L.png" alt="Image 4">
+        
+                <hr>
+        
+                <img src="C.png" alt="Image 5">
+                <img src="R.png" alt="Image 6">
+                <img src="i.png" alt="Image 7">
+                <img src="S.png" alt="Image 8">
+                <img src="O.png" alt="Image 9">
+                <img src="S.png" alt="Image 10">
+                <img src="T.png" alt="Image 11">
+                <img src="O.png" alt="Image 12">
+                <img src="M.png" alt="Image 13">
+                <img src="O.png" alt="Image 14">
+            
 
             <style>
                 .title h1{
@@ -71,6 +90,21 @@
                     animation: typing 2s steps(15), cursor .4s step-end infinite alternate;
                 }
 
+                .image-container {
+                display: flex;
+                justify-content: flex-start; 
+                align-items: center;
+                gap: 10px; 
+                flex-wrap: wrap;
+                padding: 10px;
+              }
+
+               .image-container img {
+                width: 100px; 
+                height: auto; 
+                border-radius: 10px;
+              }
+
                 @keyframes cursor{
                     50%{ border-color: white;}
                 }
@@ -81,5 +115,7 @@
             </style>
         </div>
     </div>
+  </div>
+
 </body>
 </html>
