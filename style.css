@@ -139,34 +139,33 @@ ul li a:hover{
 }
 
 
-/* Mobile devices (up to 600px) */
-@media screen and (max-width: 600px) {
+/* para sa Mobile devices (up to 480px) */
+@media screen and (max-width: 480px) {
     body {
       background-color: lightblue;
     }
   }
   
-  /* Tablets (601px to 1024px) */
-  @media screen and (min-width: 601px) and (max-width: 1024px) {
+  /* para sa tabelets (600px to 800px) */
+  @media screen and (min-width: 600px) and (max-width: 800px) {
     body {
       background-color: lightgreen;
     }
   }
   
-  /* Laptops (1025px to 1440px) */
-  @media screen and (min-width: 1025px) and (max-width: 1440px) {
+  /* para Laptops (1280px to 1440px) */
+  @media screen and (min-width: 1280px) and (max-width: 1440px) {
     body {
       background-color: lightcoral;
     }
   }
   
-  /* Large screens (1441px and above) */
+  /* para sa Large screens (1441px and above) */
   @media screen and (min-width: 1441px) {
     body {
       background-color: lightgoldenrodyellow;
     }
   }
-
 
 /* .button{
     display: flex;
