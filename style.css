@@ -139,48 +139,80 @@ ul li a:hover{
 }
 
 
-/* para sa Mobile devices (up to 480px) */
-@media screen and (max-width: 480px) {
-    body {
-      background-color: lightblue;
-    }
-  }
-  
-  /* para sa tabelets (600px to 800px) */
-  @media screen and (min-width: 600px) and (max-width: 800px) {
-    body {
-      background-color: lightgreen;
-    }
-  }
-  
-  /* para Laptops (1280px to 1440px) */
-  @media screen and (min-width: 1280px) and (max-width: 1440px) {
-    body {
-      background-color: lightcoral;
-    }
-  }
-  
-  /* para sa Large screens (1441px and above) */
-  @media screen and (min-width: 1441px) {
-    body {
-      background-color: lightgoldenrodyellow;
-    }
-  }
+/* for devices ito */
 
-/* .button{
-    display: flex;
-    justify-content: center;
-    position: relative;
-    top: 51%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+@media screen and (max-width: 1024px) {
+    .navbar {
+        width: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .menu {
+        width: 100%;
+        float: none;
+        text-align: center;
+    }
+
+    ul {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+    ul li {
+        margin: 10px 0;
+    }
+
+    .search-box {
+        width: 50%;
+        margin: 10px auto;
+    }
 }
 
-.btn{
-    color: white;
-    padding: 5px 20px;
-    font-size: 18px;
-    text-decoration: none;
-    border: 1px solid red;
+@media screen and (max-width: 768px) {
+    .logo {
+        font-size: 35px;
+        padding-top: 1%;
+        text-align: center;
+        float: none;
+    }
 
-} */
+    .menu {
+        width: 100%;
+        height: auto;
+    }
+
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title {
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .title h1 {
+        font-size: 65px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo {
+        font-size: 30px;
+    }
+
+    .title h1 {
+        font-size: 45px;
+    }
+
+    .search-box {
+        width: 80%;
+        margin: 10px auto;
+        padding: 5px;
+    }
+}
+
+
