@@ -8,7 +8,7 @@
         body {
             margin: 0;
             overflow: hidden;
-            background: black;
+            background: rgb(61, 61, 61);
         }
         .scene {
             position: relative;
@@ -56,9 +56,9 @@
         <div class="glow"></div>
         <div class="title">
             <h1>HELLO GUYS!!!</h1>
-            
-             <marquee behavior="slide" direction="stop">
-                <div class="image-container">
+
+            <div class="image-container">
+               <marquee behavior="slide" direction="stop">
                 <img src="C.png" alt="Image 1">
                 <img src="A.png" alt="Image 2">
                 <img src="R.png" alt="Image 3">
@@ -76,7 +76,7 @@
                 <img src="O.png" alt="Image 12">
                 <img src="M.png" alt="Image 13">
                 <img src="O.png" alt="Image 14">
-             </marquee> 
+            </marquee> 
 
             <style>
                 .title h1{
@@ -91,16 +91,16 @@
                     animation: typing 2s steps(15), cursor .4s step-end infinite alternate;
                 }
 
-                .image-container {
+             .image-container {
                 display: flex;
                 justify-content: flex-start; 
                 align-items: center;
                 gap: 10px; 
                 flex-wrap: wrap;
                 padding: 10px;
-              }
+               }
 
-               .image-container img {
+            .image-container img {
                 width: 100px; 
                 height: auto; 
                 border-radius: 10px;
@@ -113,10 +113,31 @@
                 @keyframes typing{
                     from{ width: 0;}
                 }
+                
             </style>
         </div>
     </div>
-  </div>
+    </div>
+
+    
+
+    <style>
+        .image-container {
+            display: flex;
+            justify-content: flex-start; 
+            align-items: center;
+            gap: 10px; 
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+
+        .image-container img {
+            width: 100px; 
+            height: auto; 
+            border-radius: 10px;
+        }
+    </style>
+
 
 </body>
 </html>
