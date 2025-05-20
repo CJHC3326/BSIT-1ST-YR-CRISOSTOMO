@@ -1,197 +1,148 @@
-*{
-    margin: 0;
-    padding: 0;
+/* ==========  CSS CUSTOM PROPS  ========== */
+:root{
+  /* light theme */
+  --bg: #000;
+  --nav-bg: rgba(0,0,0,.6);
+  --text: #fff;
+  --accent: #0ea5e9; /* skyblue */
+  --border: #fff;
 }
 
-.main{
-    width: 100%;
-    background: black;
-    background-image: url(bg4.webp);
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
-    font-family: sans-serif;
+body.dark{
+  /* dark theme toggles these */
+  --bg: #111;
+  --nav-bg: rgba(17,17,17,.65);
+  --text: #e5e5e5;
+  --accent: #60a5fa;
+  --border: #e5e5e5;
 }
 
+/* ==========  BASE  ========== */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:sans-serif;background:var(--bg);color:var(--text);transition:background .3s,color .3s}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+/* Loader fade‑in */
+body.not-loaded{overflow:hidden;opacity:0}
+body{opacity:1;transition:opacity .5s ease-in}
+
+/* ==========  NAVBAR  ========== */
 .navbar{
-    width: 95%;
-    height: auto;
-    margin-left: 30px;
+  width:100%;
+  padding:16px 24px;
+  background:var(--nav-bg);
+  backdrop-filter:blur(6px);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  position:relative;
 }
 
 .logo{
-    color: white;
-    font-size: 40px;
-    font-weight: bold;
-    font-family: cursive;
-    float: left;
-    padding-top: .6%;
-    cursor: pointer;
-    transition: .4 ease;
+  font-family:cursive;
+  font-size:2.2rem;
+  font-weight:700;
+  cursor:pointer;
+  transition:color .4s;
+}
+.logo:hover{color:var(--accent)}
+
+/* HAMBURGER */
+.menu-toggle{display:none}
+.hamburger{
+  display:none;          /* shown on ≤992px */
+  cursor:pointer;
+  font-size:1.8rem;
+  color:var(--text);
 }
 
-.logo:hover{
-    background-color: transparent;
-    color: red;
-
+/* NAV LINKS */
+.menu ul{
+  list-style:none;
+  display:flex;
+  gap:32px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.menu a{
+  padding:6px 22px;
+  border:2px solid var(--border);
+  font-weight:600;
+  transition:background .25s,color .25s,border .25s;
+}
+.menu a:hover{
+  background:var(--border);
+  color:var(--accent);
 }
 
-.menu{
-    width: 800px;
-    float: left;
-    height: 70px;
-}
-
-ul{
-    float: left;
-    display: flex;
-    padding-top: 30px;
-    justify-content: space-between;
-    align-items: center;
-    margin-left: 14%;
-}
-
-ul li{
-    list-style: none;
-    margin-left: 60px;
-    font-size: 16px;
-}
-
-ul li a{
-    text-decoration: none;
-    color: white;
-    padding: 5px 20px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    border: 2px solid white;
-    transition: .3 ease;
-}
-
-ul li a:hover{
-    background-color: white;
-    color: skyblue;
-
-}
-
+/* SEARCH */
 .search-box{
-    float: right;
-    width: 240px;
-    background: white;
-    height: 30px;
-    padding: 8px;
-    border-radius: 15px;
-    margin-top: 1%;
-    margin-right: 2%;
+  display:flex;
+  align-items:center;
+  background:#fff;
+  height:38px;
+  padding:0 8px;
+  border-radius:14px;
 }
-
-.search-box .search-txt{
-    width: 190px;
-    padding: 0 6px;
-}
-
-.search-btn{
-    text-decoration: none;
-    background: white;
-    color: black;
-    display: flex;
-    float: right;
-    justify-content: center;
-    align-items: center;
-    width: 30px;
-    height: 30px;
-}
-
 .search-txt{
-    border: none;
-    background: none;
-    outline: none;
-    float: left;
-    color: red;
-    font-size: 16px;
-    line-height: 30px;
-    letter-spacing: .6px;
+  border:none;outline:none;background:none;
+  flex:1;font-size:15px;color:#f43f5e; /* red */
+}
+.search-btn{
+  display:flex;align-items:center;justify-content:center;
+  width:30px;height:30px;background:#fff;border:none;cursor:pointer;
 }
 
-.title{
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -95%);
+/* DARK‑MODE BTN */
+.theme-btn{
+  background:none;border:2px solid var(--border);
+  color:var(--text);border-radius:50%;cursor:pointer;
+  width:40px;height:40px;display:flex;align-items:center;justify-content:center;
+  transition:background .25s,border .25s;
 }
+.theme-btn:hover{background:var(--border);color:var(--accent)}
 
+/* ==========  HERO TITLE  ========== */
+.main{
+  width:100%;height:calc(100vh - 96px); /* subtract nav height estimate */
+  background:url('bg2.jpg') center/cover no-repeat;
+  position:relative;
+  display:flex;align-items:center;justify-content:center;
+}
 .title h1{
-    cursor: pointer;
-    font-family: sans-serif;
-    color: white;
-    font-size: 85px;
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 2s steps(15), cursor .4s step-end infinite alternate;
+  color: black;
+  font-size:5.3rem;
+  border-right:3px solid var(--text);
+  white-space:nowrap;overflow:hidden;
+  animation:typing 2.5s steps(16),cursor .5s step-end infinite alternate;
+  cursor:pointer;
+}
+@keyframes cursor{50%{border-color:transparent}}
+@keyframes typing{from{width:0}to{width:100%}}
+
+/* ==========  BREAKPOINTS  ========== */
+@media (max-width:992px){            /* tablets */
+  .hamburger{display:block}
+  /* slide menu */
+  .menu{
+    position:absolute;top:100%;left:0;width:100%;
+    background:var(--nav-bg);
+    max-height:0;overflow:hidden;
+    transition:max-height .35s ease-out;
+  }
+  .menu ul{flex-direction:column;padding:24px 0;gap:20px}
+  .menu-toggle:checked + .hamburger + .menu{max-height:400px;transition:max-height .4s ease-in}
 }
 
-@keyframes cursor{
-    50%{ border-color: white;}
+@media (max-width:768px){            /* large phones */
+  .logo{font-size:1.8rem}
+  .search-box{flex:1;max-width:none;height:34px}
+  .search-txt{font-size:14px}
 }
 
-@keyframes typing{
-    from{ width: 0;}
-}
-
-
-/* media-queries */
-
-
-/* windows phone */
-
-
-/* Portrait */
-@media screen 
-  and (device-width: 480px) 
-  and (device-height: 800px)  
-  and (orientation: portrait) {
-
-}
-
-/* Landscape */
-@media screen 
-  and (device-width: 480px) 
-  and (device-height: 800px) 
-  and (orientation: landscape) {
-
-}
-
-
-
-/* laptops */
-
-
-
-/* Portrait */
-@media screen 
-  and (device-width: 480px) 
-  and (device-height: 800px)  
-  and (orientation: portrait) {
-
-}
-
-/* Landscape */
-@media screen 
-  and (device-width: 480px) 
-  and (device-height: 800px) 
-  and (orientation: landscape) {
-
-}
-
-@media screen 
-  and (min-device-width: 1200px) 
-  and (max-device-width: 1600px) 
-  and (-webkit-min-device-pixel-ratio: 1) { 
-}
-
-@media screen 
-  and (min-device-width: 1200px) 
-  and (max-device-width: 1600px) 
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (min-resolution: 192dpi) { 
+@media (max-width:480px){            /* small phones */
+  .title h1{font-size:2.4rem}
+  .menu a{padding:6px 18px;font-size:.9rem}
 }
